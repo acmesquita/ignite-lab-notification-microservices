@@ -10,17 +10,11 @@ export type CancelNotificationResponse = void;
 
 @Injectable()
 export class CancelNotification {
-  constructor(
-    private readonly notificationsRepository: NotificationsRepository,
-  ) {}
-  async execute(
-    request: CancelNotificationProps,
-  ): Promise<CancelNotificationResponse> {
+  constructor(private readonly notificationsRepository: NotificationsRepository) {}
+  async execute(request: CancelNotificationProps): Promise<CancelNotificationResponse> {
     const { notificationId } = request;
 
-    const notification = await this.notificationsRepository.findById(
-      notificationId,
-    );
+    const notification = await this.notificationsRepository.findById(notificationId);
 
     if (!notification) {
       throw new NotificationNotFound();

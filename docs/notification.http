@@ -1,6 +1,6 @@
 # Request API Notification
 
-### Correctly request
+### Create notification
 POST http://localhost:3000/notifications HTTP/1.1
 content-type: application/json
 
@@ -10,7 +10,7 @@ content-type: application/json
   "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
 }
 
-### Invalid content
+### Invalid content when create notification
 POST http://localhost:3000/notifications HTTP/1.1
 content-type: application/json
 
@@ -20,7 +20,7 @@ content-type: application/json
   "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
 }
 
-### Invalid recipientId
+### Invalid recipientId when create notification
 POST http://localhost:3000/notifications HTTP/1.1
 content-type: application/json
 
@@ -30,7 +30,7 @@ content-type: application/json
   "recipientId": "invalid_id"
 }
 
-### Invalid category
+### Invalid category when create notification
 POST http://localhost:3000/notifications HTTP/1.1
 content-type: application/json
 
@@ -39,3 +39,18 @@ content-type: application/json
   "content": "New member in your chanel",
   "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
 }
+
+### Cancel notification
+PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/cancel HTTP/1.1
+
+### Read notification
+PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/read HTTP/1.1
+
+### Unread notification
+PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/unread HTTP/1.1
+
+### Count notifications to recipient
+GET http://localhost:3000/notifications/count/from/da1f365e-501d-4242-aec6-e50bbcab8d45 HTTP/1.1
+
+### Get all notifications active to recipient
+GET http://localhost:3000/notifications/from/da1f365e-501d-4242-aec6-e50bbcab8d45 HTTP/1.1
