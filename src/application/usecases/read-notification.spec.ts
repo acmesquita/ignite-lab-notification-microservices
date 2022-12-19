@@ -3,7 +3,7 @@ import { IMNotificationsRepository } from "@test/repositories/in-memory-notifica
 import { ReadNotifications } from "./read-notification";
 
 describe("Read Notification", () => {
-  it("should be able to cancel a notification", async () => {
+  it("should be able to read a notification", async () => {
     const repository = new IMNotificationsRepository();
     const notification = makeNotification({});
 
@@ -17,7 +17,7 @@ describe("Read Notification", () => {
     expect(repository.notifications[0].readAt).toBeTruthy();
   });
 
-  it("should not be able to cancel notification when it does not exist", async () => {
+  it("should not be able to read notification when it does not exist", async () => {
     const repository = new IMNotificationsRepository();
 
     const sut = new ReadNotifications(repository);
