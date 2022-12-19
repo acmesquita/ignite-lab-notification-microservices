@@ -8,4 +8,10 @@ export default {
   collectCoverageFrom: ["**/*.(t|j)s"],
   coverageDirectory: "../coverage",
   testEnvironment: "node",
+  moduleNameMapper: {
+    "^@application/(.*)$": "<rootDir>/application/$1",
+    "^@helpers/(.*)$": "<rootDir>/helpers/$1",
+    "^@infra/(.*)$": "<rootDir>/infra/$1",
+    "^@test/(.*)$": "test/$1",
+  },
 };
