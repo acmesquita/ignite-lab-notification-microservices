@@ -5,7 +5,9 @@ import { UnreadNotifications } from "./unread-notification";
 describe("Unread Notification", () => {
   it("should be able to unread a notification", async () => {
     const repository = new IMNotificationsRepository();
-    const notification = makeNotification({});
+    const notification = makeNotification({
+      readAt: new Date(),
+    });
 
     await repository.create(notification);
 
@@ -14,12 +16,11 @@ describe("Unread Notification", () => {
       notificationId: notification.id,
     });
 
-    expect(repository.notifications[0].readAt).toBeFalsy();
+    expect(repository.notifications[0].readAt).toBeNull();
   });
 
   it("should not be able to unread notification when it does not exist", async () => {
     const repository = new IMNotificationsRepository();
-
     const sut = new UnreadNotifications(repository);
 
     await expect(
