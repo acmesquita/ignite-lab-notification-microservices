@@ -41,13 +41,13 @@ content-type: application/json
 }
 
 ### Cancel notification
-PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/cancel HTTP/1.1
+PATCH http://localhost:3000/notifications/43a3217c-c3a7-408b-ba2f-07a102103c9a/cancel HTTP/1.1
 
 ### Read notification
-PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/read HTTP/1.1
+PATCH http://localhost:3000/notifications/43a3217c-c3a7-408b-ba2f-07a102103c9a/read HTTP/1.1
 
 ### Unread notification
-PATCH http://localhost:3000/notifications/3da3217c-c3a7-408b-ba2f-07a102103c9a/unread HTTP/1.1
+PATCH http://localhost:3000/notifications/89c7f403-55a5-4d18-9274-112785ca2898/unread HTTP/1.1
 
 ### Count notifications to recipient
 GET http://localhost:3000/notifications/count/from/da1f365e-501d-4242-aec6-e50bbcab8d45 HTTP/1.1

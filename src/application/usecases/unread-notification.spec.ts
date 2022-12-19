@@ -29,4 +29,18 @@ describe("Unread Notification", () => {
       }),
     ).rejects.toThrow("Notification not found");
   });
+
+  it("should not be able to unread notification when it does not read after", async () => {
+    const repository = new IMNotificationsRepository();
+    const notification = makeNotification({});
+
+    await repository.create(notification);
+    const sut = new UnreadNotifications(repository);
+
+    await expect(
+      sut.execute({
+        notificationId: notification.id,
+      }),
+    ).rejects.toThrow("Invalid operation. You can't unread if not read after");
+  });
 });

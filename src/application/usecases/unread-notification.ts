@@ -21,6 +21,10 @@ export class UnreadNotifications {
       throw new NotificationNotFound();
     }
 
+    if (!notification.readAt) {
+      throw new Error("Invalid operation. You can't unread if not read after");
+    }
+
     notification.unread();
 
     await this.notificationsRepository.save(notification);

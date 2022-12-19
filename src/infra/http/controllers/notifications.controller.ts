@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
+import { BadRequestException, Body, Controller, Get, Param, Patch, Post } from "@nestjs/common";
 import {
   SendNotification,
   CancelNotification,
@@ -35,23 +35,47 @@ export class NotificationsController {
 
   @Patch(":id/cancel")
   async cancel(@Param("id") id: string) {
-    await this.cancelNotification.execute({
-      notificationId: id,
-    });
+    try {
+      await this.cancelNotification.execute({
+        notificationId: id,
+      });
+    } catch (error) {
+      const description = error as Error;
+      throw new BadRequestException(description.message, {
+        cause: new Error(),
+        description: "Bad Request",
+      });
+    }
   }
 
   @Patch(":id/read")
   async read(@Param("id") id: string) {
-    await this.readNotification.execute({
-      notificationId: id,
-    });
+    try {
+      await this.readNotification.execute({
+        notificationId: id,
+      });
+    } catch (error) {
+      const description = error as Error;
+      throw new BadRequestException(description.message, {
+        cause: new Error(),
+        description: "Bad Request",
+      });
+    }
   }
 
   @Patch(":id/unread")
   async unread(@Param("id") id: string) {
-    await this.unreadNotification.execute({
-      notificationId: id,
-    });
+    try {
+      await this.unreadNotification.execute({
+        notificationId: id,
+      });
+    } catch (error) {
+      const description = error as Error;
+      throw new BadRequestException(description.message, {
+        cause: new Error(),
+        description: "Bad Request",
+      });
+    }
   }
 
   @Get("count/from/:recipientId")
