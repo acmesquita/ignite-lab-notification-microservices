@@ -31,7 +31,7 @@ npx prisma migrate dev
 Com esses dois passos concluídos, vamos levantar o servidor e testar a aplicação:
 
 ```
-yarn start
+yarn start:dev
 ```
 
 Para validar o endpoint, utilizer o arquivo: `docs/notification.http`, nele está demonstrado todos os exemplo.
