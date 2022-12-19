@@ -1,0 +1,41 @@
+# Request API Notification
+
+### Correctly request
+POST http://localhost:3000/notifications HTTP/1.1
+content-type: application/json
+
+{
+  "category": "social",
+  "content": "New member in your chanel",
+  "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
+}
+
+### Invalid content
+POST http://localhost:3000/notifications HTTP/1.1
+content-type: application/json
+
+{
+  "category": "social",
+  "content": "you",
+  "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
+}
+
+### Invalid recipientId
+POST http://localhost:3000/notifications HTTP/1.1
+content-type: application/json
+
+{
+  "category": "social",
+  "content": "New member in your chanel",
+  "recipientId": "invalid_id"
+}
+
+### Invalid category
+POST http://localhost:3000/notifications HTTP/1.1
+content-type: application/json
+
+{
+  "category": "",
+  "content": "New member in your chanel",
+  "recipientId": "da1f365e-501d-4242-aec6-e50bbcab8d45"
+}
