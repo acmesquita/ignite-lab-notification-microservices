@@ -1,4 +1,3 @@
-import { randomUUID } from "node:crypto";
 import { Kafka } from "kafkajs";
 
 async function bootstrap() {
@@ -18,7 +17,7 @@ async function bootstrap() {
         value: JSON.stringify({
           content: "Nova solicitação de amizade",
           category: "social",
-          recipientId: randomUUID(),
+          recipientId: "da1f365e-501d-4242-aec6-e50bbcab8d45",
         }),
       },
     ],

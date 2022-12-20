@@ -87,4 +87,19 @@ yarn start:dev
 npx prisma studio
 ```
 
+### Utilização do web view
+
+Para que possamos visualizar as mensagens via web, foi criado o projeto `web-view`, onde podemos visualizar as notificações criadas no serviço.
+
+Para visualizar basta:
+
+```
+cd web-view
+yarn
+yarn dev
+```
+
+Ao acessar http://localhost:5173 vai ser exibido no canto superior direito o sino de notificações, e ao clicar será listado todas as notificações do usuário.
+
+
 That's all! :tada:
