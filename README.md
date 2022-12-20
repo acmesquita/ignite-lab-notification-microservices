@@ -86,4 +86,4 @@ yarn start:dev
 npx prisma studio
 ```
 
-That's all :tada
+That's all! :tada:
