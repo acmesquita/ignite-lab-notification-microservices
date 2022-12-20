@@ -14,6 +14,7 @@ e boas práticas:
 - Clean architecture
 - Inversão de dependências
 - Injeção de dependências
+- Testes da camada de domínio da aplicação
 
 ### Incializar o projeto
 

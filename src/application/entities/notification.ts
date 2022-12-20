@@ -31,24 +31,12 @@ export class Notification {
     return this.props.content;
   }
 
-  public set content(content: Content) {
-    this.props.content = content;
-  }
-
   public get recipientId(): string {
     return this.props.recipientId;
   }
 
-  public set recipientId(recipientId: string) {
-    this.props.recipientId = recipientId;
-  }
-
   public get category(): string {
     return this.props.category;
-  }
-
-  public set category(category: string) {
-    this.props.category = category;
   }
 
   public get readAt(): Date | null | undefined {

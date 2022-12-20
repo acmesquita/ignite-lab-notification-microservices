@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 export * from "./cancel-notification";
 export * from "./count-reciepient-notifications";
 export * from "./get-recipient-notifications";

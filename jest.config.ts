@@ -5,8 +5,8 @@ export default {
   transform: {
     "^.+\\.(t|j)s$": "ts-jest",
   },
-  collectCoverageFrom: ["**/*.(t|j)s"],
-  coverageDirectory: "../coverage",
+  collectCoverageFrom: ["src/application/**/*.(t|j)s"],
+  coverageDirectory: "./coverage",
   testEnvironment: "node",
   moduleNameMapper: {
     "^@application/(.*)$": "<rootDir>/src/application/$1",
