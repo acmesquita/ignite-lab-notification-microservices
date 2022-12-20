@@ -7,6 +7,7 @@ Criação de um microserviço para gerenciamento de notificações utilizando as
 - Jest
 - Class Validator
 - Prisma IO
+- Kafka
 
 e boas práticas:
 
@@ -42,3 +43,47 @@ Além disso, pode rodar todos os testes com o comando:
 ```
 yarn test
 ```
+
+### Utilizando mensageria
+
+Nesse projeto adicionamos uma camada para receber o envio de notificações via kafka. Para isso, foi adicionado uma nova camada na aplicação que conecta ao um servidor kafka e observa um tópico.
+
+Segue o passo a passo para utilizar a rota do kafka e vê a criação de mensagens.
+
+1. Criação do servidor Kafka
+
+```
+docker compose up
+```
+
+2. Criação do tópico
+
+Acesso o link: http://localhost:19000, clique em `+New` a fase de `Topics`. 
+
+- **Topic name**: `notifications.send-notification`
+- **Number of partitions**: 1
+- **Replication factor**: 1
+
+Clique em `Create` e pronto!
+
+3. Criação de mensagens via _producer_
+
+```
+node docs/kafka.producer.mjs
+```
+
+> A versão do Node deve ser >=18.x.x
+
+4. Suba a aplicação
+
+```
+yarn start:dev
+```
+
+5. Valide no prisma studio a criação das mensagens enviadas pelo comando 3
+
+```
+npx prisma studio
+```
+
+That's all :tada
