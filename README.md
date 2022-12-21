@@ -90,7 +90,7 @@ npx prisma studio
 
 ### Utilização do web view
 
-Para que possamos visualizar as mensagens via web, foi criado o projeto `web-view`, onde podemos visualizar as notificações criadas no serviço.
+Para que possamos visualizar as mensagens via web, adicionado a infra uma visualização web onde podemos visualizar as notificações criadas no serviço.
 
 Para visualizar basta:
 
