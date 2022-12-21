@@ -88,3 +88,7 @@ npx prisma studio
 ```
 
 That's all! :tada:
+
+Nesse repositório foi criado uma _branch_ demonstrando um exmeplo de sistema que utilizaria o sistema de notificações, basta acessa o [PR](https://github.com/acmesquita/ignite-lab-notification-microservices/pull/1) e observar.
+
+PS.: Fique a vontade de contribuir.
