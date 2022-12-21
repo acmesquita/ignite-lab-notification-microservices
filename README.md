@@ -8,6 +8,7 @@ Criação de um microserviço para gerenciamento de notificações utilizando as
 - Class Validator
 - Prisma IO
 - Kafka
+- Vite
 
 e boas práticas:
 
