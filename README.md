@@ -95,9 +95,7 @@ Para que possamos visualizar as mensagens via web, foi criado o projeto `web-vie
 Para visualizar basta:
 
 ```
-cd web-view
-yarn
-yarn dev
+yarn web:dev
 ```
 
 Ao acessar http://localhost:5173 vai ser exibido no canto superior direito o sino de notificações, e ao clicar será listado todas as notificações do usuário.
