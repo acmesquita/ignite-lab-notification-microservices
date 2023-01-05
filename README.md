@@ -8,6 +8,7 @@ Criação de um microserviço para gerenciamento de notificações utilizando as
 - Class Validator
 - Prisma IO
 - Kafka
+- Vite
 
 e boas práticas:
 
@@ -86,6 +87,19 @@ yarn start:dev
 ```
 npx prisma studio
 ```
+
+### Utilização do web view
+
+Para que possamos visualizar as mensagens via web, adicionado a infra uma visualização web onde podemos visualizar as notificações criadas no serviço.
+
+Para visualizar basta:
+
+```
+yarn web:dev
+```
+
+Ao acessar http://localhost:5173 vai ser exibido no canto superior direito o sino de notificações, e ao clicar será listado todas as notificações do usuário.
+
 
 That's all! :tada:
 

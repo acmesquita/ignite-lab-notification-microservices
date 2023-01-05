@@ -10,6 +10,7 @@ export class NotificationViewModel {
         recipientId: notification.recipientId,
         readAt: notification.readAt,
         canceledAt: notification.canceledAt,
+        createdAt: notification.createdAt,
       },
     };
   }
